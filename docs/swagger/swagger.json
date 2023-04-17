@@ -1,0 +1,383 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Challange W8 for learning purpose",
+        "version": "1.0.0",
+        "title": "Challange w8 API Docs",
+        "termsOfService": "http://localhost:3000/tos",
+        "contact": {
+            "email": "123@test.com",
+            "name": ""
+        },
+        "license": {
+            "name": "MIT License (MIT)",
+            "url": "https://opensource.org/license/mit/"
+        }
+    },
+    "host": "localhost:3000",
+    "basePath": "/api/test",
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/players/create": {
+            "post": {
+                "description": "Player Create",
+                "operationId": "playerCreate",
+                "tags": [
+                    "player"
+                ],
+                "parameters": [
+                    {
+                        "name": "player",
+                        "in": "body",
+                        "description": "Create New Player",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UserRequestData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "create success",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessApiResponseSingle"
+                        }
+                    },
+                    "400": {
+                        "description": "invalid data",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorApiResponseSingle"
+                        }
+                    },
+                    "500": {
+                        "description": "internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorApiResponseSingle"
+                        }
+                    },
+                    "default": {
+                        "description": "invalid data",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorApiResponseSingle"
+                        }
+                    }
+                }
+            }
+        },
+        "/players/findAll": {
+            "get": {
+                "description": "find all user",
+                "operationId": "findAllUser",
+                "tags": [
+                    "player"
+                ],
+                "parameters": [
+                    {
+                        "name": "find all user",
+                        "in": "body",
+                        "description": "find user data",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UserRequestData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "player find success",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessApiResponseSingle"
+                        }
+                    },
+                    "400": {
+                        "description": "invalid player data",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorApiResponseSingle"
+                        }
+                    },
+                    "500": {
+                        "description": "internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorApiResponseSingle"
+                        }
+                    },
+                    "default": {
+                        "description": "invalid player data",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorApiResponseSingle"
+                        }
+                    }
+                }
+            }
+        },
+        "/players/findById": {
+            "get": {
+                "description": "find user by id",
+                "operationId": "findUserById",
+                "tags": [
+                    "player"
+                ],
+                "parameters": [
+                    {
+                        "name": "find user by Id",
+                        "in": "body",
+                        "description": "find user by Id",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UserRequestData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "player find success",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessApiResponseSingle"
+                        }
+                    },
+                    "400": {
+                        "description": "invalid player data",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorApiResponseSingle"
+                        }
+                    },
+                    "500": {
+                        "description": "internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorApiResponseSingle"
+                        }
+                    },
+                    "default": {
+                        "description": "invalid player data",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorApiResponseSingle"
+                        }
+                    }
+                }
+            }
+        },
+        "/players/update": {
+            "put": {
+                "description": "update user by id",
+                "operationId": "updateUserById",
+                "tags": [
+                    "player"
+                ],
+                "parameters": [
+                    {
+                        "name": "update user by Id",
+                        "in": "body",
+                        "description": "update user by Id",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UserRequestData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "player update success",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessApiResponseSingle"
+                        }
+                    },
+                    "400": {
+                        "description": "invalid update data",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorApiResponseSingle"
+                        }
+                    },
+                    "500": {
+                        "description": "internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorApiResponseSingle"
+                        }
+                    },
+                    "default": {
+                        "description": "invalid update data",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorApiResponseSingle"
+                        }
+                    }
+                }
+            }
+        },
+        "/players/getExperience": {
+            "post": {
+                "description": "find user by exp",
+                "operationId": "findUserByExp",
+                "tags": [
+                    "player"
+                ],
+                "parameters": [
+                    {
+                        "name": "find user by exp",
+                        "in": "body",
+                        "description": "find user by exp",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UserRequestData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "player find success",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessApiResponseSingle"
+                        }
+                    },
+                    "400": {
+                        "description": "invalid player data",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorApiResponseSingle"
+                        }
+                    },
+                    "500": {
+                        "description": "internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorApiResponseSingle"
+                        }
+                    },
+                    "default": {
+                        "description": "invalid player data",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorApiResponseSingle"
+                        }
+                    }
+                }
+            }
+        },
+        "/players/delete": {
+            "delete": {
+                "description": "delete user",
+                "operationId": "deleteUser",
+                "tags": [
+                    "player"
+                ],
+                "parameters": [
+                    {
+                        "name": "delete user ",
+                        "in": "body",
+                        "description": "update user",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UserRequestData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "player delete success",
+                        "schema": {
+                            "$ref": "#/definitions/SuccessApiResponseSingle"
+                        }
+                    },
+                    "400": {
+                        "description": "invalid player data",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorApiResponseSingle"
+                        }
+                    },
+                    "500": {
+                        "description": "internal server error",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorApiResponseSingle"
+                        }
+                    },
+                    "default": {
+                        "description": "invalid player data",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorApiResponseSingle"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "SuccessApiResponseSingle": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                },
+                "data": {
+                    "type": "object"
+                }
+            }
+        },
+        "SuccessApiResponseMultiple": {
+            "type": "object",
+            "required": [
+                "data"
+            ],
+            "properties": {
+                "message": {
+                    "type": "string"
+                },
+                "data": {
+                    "type": "array"
+                }
+            }
+        },
+        "ErrorApiResponseSingle": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                },
+                "data": {
+                    "type": "object"
+                }
+            }
+        },
+        "ErrorApiResponseMultiple": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                },
+                "data": {
+                    "type": "array"
+                }
+            }
+        },
+        "UserRequestData": {
+            "type": "object",
+            "required": [
+                "username",
+                "password"
+            ],
+            "properties": {
+                "username": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "bearerAuth": {
+            "name": "Authorization",
+            "in": "header",
+            "type": "apiKey",
+            "description": "JWT Authorization token"
+        }
+    },
+    "security": [
+        {
+            "bearerAuth": []
+        }
+    ]
+}
